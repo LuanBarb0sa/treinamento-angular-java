@@ -1,1 +1,21 @@
-<p>cadastrar-clientes works!</p>
+<h1>Cadastro Clientes</h1>
+<form>
+  <div class="row">
+    <div class="col">
+      <app-input-label [label]="'Nome'" [type]="'text'"></app-input-label>
+    </div>
+    <div class="col">
+      <app-input-label [label]="'CPF'" [type]="'text'"></app-input-label>
+    </div>
+    <div class="col">
+      <app-input-label [label]="'E-mail'" [type]="'E-mail'"></app-input-label>
+    </div>
+    <div class="col">
+      <app-input-label [label]="'Obervação'" [type]="'text'"></app-input-label>
+    </div>
+  </div>
+</form>
+  <app-button titulo="Enviar" (click)="botaoClicado()"></app-button>
+
+
+

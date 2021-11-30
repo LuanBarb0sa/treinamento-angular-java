@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit,  } from '@angular/core';
+import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-cadastrar-clientes',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastrar-clientes.component.css']
 })
 export class CadastrarClientesComponent implements OnInit {
+  cadastroForm!: FormGroup;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  botaoClicado(){
+    alert('Amegannnn')
   }
+
+  constructor(private form: FormBuilder) { }
+
+  ngOnInit() {
+
+
+
+    }
+
 
 }

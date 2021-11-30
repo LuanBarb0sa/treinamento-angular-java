@@ -1,3 +1,4 @@
+import { CadastrarClientesComponent } from './pages/pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
 import { ClientesComponent } from './pages/pages/clientes/clientes.component';
 import { DepositoComponent } from './pages/deposito/deposito.component';
 import { SaqueComponent } from './pages/saque/saque.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'saque', component: SaqueComponent},
   { path: 'deposito', component: DepositoComponent},
   { path: 'clientes', component: ClientesComponent},
+  { path: 'cadastrar-clientes', component: CadastrarClientesComponent},
 ];
 
 @NgModule({

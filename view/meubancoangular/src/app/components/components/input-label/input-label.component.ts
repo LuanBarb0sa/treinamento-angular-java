@@ -13,6 +13,8 @@ export class InputLabelComponent implements OnInit {
   @Input()
   type = 'text' || 'email' || 'password';
 
+  
+
   constructor() { }
 
   ngOnInit(): void {

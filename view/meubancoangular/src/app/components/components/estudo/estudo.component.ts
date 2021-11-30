@@ -1,4 +1,4 @@
-import { Component, OnInit, , } from '@angular/core';
+import { Component, Input, OnInit, } from '@angular/core';
 
 
 @Component({
@@ -8,8 +8,8 @@ import { Component, OnInit, , } from '@angular/core';
 })
 export class EstudoComponent implements OnInit {
 
-  @Input()
-
+  @Input() exibindo: string = '';
+  @Input() exibirTextoAlerta: string = '';
 
 
 
