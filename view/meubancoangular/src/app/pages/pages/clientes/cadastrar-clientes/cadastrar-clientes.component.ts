@@ -8,7 +8,8 @@ import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/for
   styleUrls: ['./cadastrar-clientes.component.css']
 })
 export class CadastrarClientesComponent implements OnInit {
-  cadastroForm!: FormGroup;
+
+ 
 
 
   botaoClicado(){
@@ -23,5 +24,8 @@ export class CadastrarClientesComponent implements OnInit {
 
     }
 
+    criar(){
+
+    }
 
 }
