@@ -1,7 +1,5 @@
 import { Component,  OnInit,  } from '@angular/core';
 import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/forms';
-import { Clientes } from '../clientes';
-
 
 @Component({
   selector: 'app-cadastrar-clientes',
@@ -9,17 +7,27 @@ import { Clientes } from '../clientes';
   styleUrls: ['./cadastrar-clientes.component.css']
 })
 export class CadastrarClientesComponent implements OnInit {
-  clientes!: Clientes;
-  
- 
+  form!:FormGroup;
 
-  constructor() {this.clientes= new Clientes()}
+  constructor(private formb:FormBuilder) {
+  }
 
   ngOnInit():void {
-
+    this.createForm();
   }
-  onSubmit(): void { /* metodo onSubmit com alerta  para aparecer na pag*/
-     alert(`nome: ${this.clientes.nome}\ncpf: ${this.clientes.cpf}\nemail: ${this.clientes.email}\nobs: ${this.clientes.obs}\nativo: ${this.clientes.ativo}`)
+  createForm():void {
+    this.form = this.formb.group({
+      nome: new FormControl(null,[Validators.required]),
+      cpf: new FormControl (null,[Validators.required, Validators.maxLength(14), Validators.minLength(14)]),
+      email: new FormControl(null,[Validators.required, Validators.email]),
+      obs: new FormControl(null,[Validators.required, Validators.maxLength(30)]),
+      ativo: new FormControl(null,[Validators.required]),
+    })
+  }
+
+  onSubmit(): void { 
+     alert(`nome: ${this.form?.get('nome')?.value}\ncpf: ${this.form?.get('cpf')?.value}\nemail: ${this.form?.get('email')?.value}\nobs: ${this.form?.get('obs')?.value}\nativo: ${this.form?.get('ativo')?.value}`)
+
   }
     
 

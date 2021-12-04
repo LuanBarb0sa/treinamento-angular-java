@@ -1,27 +1,27 @@
 <h1 class="mb-5 mt-5">Cadastro Clientes</h1>
-<form #clientForm="ngForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="form">
   <div class="mb-3">
     <label  class="form-label">Nome</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="clientes.nome" name="nome">
+    <input type="text" class="form-control"  name="nome" formControlName="nome">
   </div>
   <div class="mb-3">
     <label  class="form-label">CPF</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="clientes.cpf" name="cpf">
+    <input type="text" class="form-control"   name="cpf" formControlName="cpf" mask="000.000.000-00">
   </div>
   <div class="mb-3">
     <label  class="form-label">E-mail</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="clientes.email" name="email">
+    <input type="text" class="form-control"   name="email" formControlName="email">
   </div>
   <div class="mb-3">
     <label  class="form-label">Observação</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="clientes.obs" name="obs"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="obs" formControlName="obs"></textarea>
   </div>
   <div class="mb-3">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="clientes.ativo" name="ativo">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ativo" formControlName="ativo">
     <label class="form-check-label " for="exampleCheck1" titulo= "Enviar">Aceito os termos</label>
     </div>
 </form>
-<button type="submit" class="btn btn-dark" (click)="onSubmit()">Enviar</button>
+<button type="submit" class="btn btn-dark" (click)="onSubmit()" [disabled]="form.invalid">Enviar</button>
 
   
 

@@ -1,14 +1,16 @@
 <h1 class="mb-5 mt-5"> Depósito </h1>
-
-<div class="row">
-  <div class="col">
-<app-input-label [label]="'Agência'" [type]="'text'"></app-input-label>
-</div>
-<div class="col">
-<app-input-label [label]="'Conta'" [type] ="'text'"></app-input-label>
-</div>
-<div class="col">
-<app-input-label [label]="'Valor'" [type]="'text'"></app-input-label>
-</div>
-<app-checkbox label="Aceito os termos"></app-checkbox>
-<app-button titulo="Enviar"></app-button>
+<form [formGroup]="form">
+  <div class="mb-3">
+    <label  class="form-label">Agencia</label>
+    <input type="text" class="form-control"  name="Agencia" formControlName="agencia">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Conta</label>
+    <input type="text" class="form-control"  name="Conta" formControlName="conta">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Valor</label>
+    <input type="text" class="form-control"  name="Valor" formControlName="valor">
+  </div>
+</form>
+<button type="submit" class="btn btn-dark"  [disabled]="form.invalid" (click)="onSubmit()">Enviar</button>
