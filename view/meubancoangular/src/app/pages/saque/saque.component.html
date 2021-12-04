@@ -2,15 +2,15 @@
 <form [formGroup]="form">
     <div class="mb-3">
       <label  class="form-label">Agencia</label>
-      <input type="text" class="form-control"  name="Agencia" formControlName="agencia">
+      <input type="text" class="form-control"  name="Agencia" formControlName="agencia" maxlength="4">
     </div>
     <div class="mb-3">
       <label  class="form-label">Conta</label>
-      <input type="text" class="form-control"  name="Conta" formControlName="conta">
+      <input type="text" class="form-control"  name="Conta" formControlName="conta" mask="00000000-0">
     </div>
     <div class="mb-3">
       <label  class="form-label">Valor</label>
-      <input type="text" class="form-control"  name="Valor" formControlName="valor">
+      <input type="text" class="form-control"  name="Valor" formControlName="valor" currencyMask >
     </div>
 </form>
   <app-checkbox label="Aceito os termos"></app-checkbox>

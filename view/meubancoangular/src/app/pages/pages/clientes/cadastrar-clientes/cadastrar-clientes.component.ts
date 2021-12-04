@@ -1,5 +1,6 @@
 import { Component,  OnInit,  } from '@angular/core';
 import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar-clientes',
@@ -18,7 +19,7 @@ export class CadastrarClientesComponent implements OnInit {
   createForm():void {
     this.form = this.formb.group({
       nome: new FormControl(null,[Validators.required]),
-      cpf: new FormControl (null,[Validators.required, Validators.maxLength(14), Validators.minLength(14)]),
+      cpf: new FormControl (null,[Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
       email: new FormControl(null,[Validators.required, Validators.email]),
       obs: new FormControl(null,[Validators.required, Validators.maxLength(30)]),
       ativo: new FormControl(null,[Validators.required]),
@@ -26,8 +27,16 @@ export class CadastrarClientesComponent implements OnInit {
   }
 
   onSubmit(): void { 
-     alert(`nome: ${this.form?.get('nome')?.value}\ncpf: ${this.form?.get('cpf')?.value}\nemail: ${this.form?.get('email')?.value}\nobs: ${this.form?.get('obs')?.value}\nativo: ${this.form?.get('ativo')?.value}`)
+    alert(`nome: ${this.form?.get('nome')?.value}\ncpf: ${this.form?.get('cpf')?.value}\nemail: ${this.form?.get('email')?.value}\nobs: ${this.form?.get('obs')?.value}\nativo: ${this.form?.get('ativo')?.value}`)
+    //  Swal.fire({
+    //   position: 'center',
+    //   icon: 'success',
+    //   title: `Cliente: ${this.form?.get('cpf')?.value}\nCadastrado com Sucesso`,
+    //   showConfirmButton: false,
+    //   timer: 1500
+    // })
 
+    this.form.reset();
   }
     
 

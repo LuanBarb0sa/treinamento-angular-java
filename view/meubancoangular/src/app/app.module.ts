@@ -16,6 +16,8 @@ import { CheckboxComponent } from './components/components/checkbox/checkbox.com
 import { ButtonComponent } from './components/components/button/button.component';
 import { ClientesComponent } from './pages/pages/clientes/clientes.component';
 import { CadastrarClientesComponent } from './pages/pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CadastrarClientesComponent } from './pages/pages/clientes/cadastrar-cli
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
+    NgxCurrencyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
