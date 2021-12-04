@@ -1,5 +1,6 @@
 import { Component,  OnInit,  } from '@angular/core';
 import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/forms';
+import { Clientes } from '../clientes';
 
 
 @Component({
@@ -8,24 +9,18 @@ import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/for
   styleUrls: ['./cadastrar-clientes.component.css']
 })
 export class CadastrarClientesComponent implements OnInit {
-
+  clientes!: Clientes;
+  
  
 
+  constructor() {this.clientes= new Clientes()}
 
-  botaoClicado(){
-    alert('Amegannnn')
+  ngOnInit():void {
+
   }
-
-  constructor(private form: FormBuilder) { }
-
-  ngOnInit() {
-
-
-
-    }
-
-    criar(){
-
-    }
+  onSubmit(): void { /* metodo onSubmit com alerta  para aparecer na pag*/
+     alert(`nome: ${this.clientes.nome}\ncpf: ${this.clientes.cpf}\nemail: ${this.clientes.email}\nobs: ${this.clientes.obs}\nativo: ${this.clientes.ativo}`)
+  }
+    
 
 }

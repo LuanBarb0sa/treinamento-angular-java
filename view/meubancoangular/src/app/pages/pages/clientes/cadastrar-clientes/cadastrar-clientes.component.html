@@ -1,21 +1,35 @@
-<h1>Cadastro Clientes</h1>
-<form method="post" >
-  <div class="row">
-    <div class="col">
-      <app-input-label [label]="'Nome'" [type]="'text'" ></app-input-label>
-    </div>
-    <div class="col">
-      <app-input-label [label]="'CPF'" [type]="'text'"></app-input-label>
-    </div>
-    <div class="col">
-      <app-input-label [label]="'E-mail'" [type]="'E-mail'"></app-input-label>
-    </div>
-    <div class="col">
-      <app-input-label [label]="'Observação'" [type]="'text'"></app-input-label>
-    </div>
+<h1 class="mb-5 mt-5">Cadastro Clientes</h1>
+<form #clientForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label  class="form-label">Nome</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="clientes.nome" name="nome">
   </div>
+  <div class="mb-3">
+    <label  class="form-label">CPF</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="clientes.cpf" name="cpf">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">E-mail</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="clientes.email" name="email">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Observação</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="clientes.obs" name="obs"></textarea>
+  </div>
+  <div class="mb-3">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="clientes.ativo" name="ativo">
+    <label class="form-check-label " for="exampleCheck1" titulo= "Enviar">Aceito os termos</label>
+    </div>
 </form>
-  <app-button titulo="Enviar" (click)="botaoClicado()"></app-button>
+<button type="submit" class="btn btn-dark" (click)="onSubmit()">Enviar</button>
+
+  
+
+
+
+
+
+  
 
 
 

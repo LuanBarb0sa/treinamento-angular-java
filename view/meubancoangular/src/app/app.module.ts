@@ -38,7 +38,6 @@ import { CadastrarClientesComponent } from './pages/pages/clientes/cadastrar-cli
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
