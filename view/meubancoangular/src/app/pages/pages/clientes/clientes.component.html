@@ -1,37 +1,36 @@
 <h1 class="mb-5 mt-5">Clientes</h1>
-
-<table class="table">
+<div class="mb-4" *ngIf="!clientes.length">
+  <div class="spinner-border spinner-border-sm" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="spinner-grow spinner-grow-sm" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<table class="table table-dark " *ngIf="clientes.length">
   <thead>
     <tr>
-      <th scope="col"></th>
+      <th scope="col">ID</th>
       <th scope="col">Nome</th>
       <th scope="col">CPF</th>
       <th scope="col">E-mail</th>
-      <th scope="col">Observação</th>
+      <th scope="col">Observações</th>
+      <th scope="col">Ativo</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Luan Barbosa</td>
-      <td>10621176460</td>
-      <td>luanlucas.r10@hotmas.com</td>
-      <td>Poupança com rendimento</td>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.cpf }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.obs }}</td>
+      <td>
+        <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
+        <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Isaac Souza</td>
-      <td>10720976541</td>
-      <td>isaacsouza@gmail.com</td>
-      <td>Conta Corrente</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Gugaldo</td>
-      <td>10721176460</td>
-      <td>guga@terra.com</td>
-      <td>Conta corrente</td>
-    </tr>
+
   </tbody>
 </table>
 <app-button titulo="Cadastrar"  routerLink="/cadastrar-clientes" routerLinkActive="active"></app-button>

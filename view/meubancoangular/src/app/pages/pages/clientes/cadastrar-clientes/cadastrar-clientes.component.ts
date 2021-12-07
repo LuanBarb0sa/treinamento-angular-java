@@ -1,3 +1,5 @@
+import { ClienteService } from './../../../../services/cliente.service';
+import { Clientes } from './../clientes';
 import { Component,  OnInit,  } from '@angular/core';
 import { FormBuilder,  FormControl,  FormGroup,  Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
@@ -26,7 +28,7 @@ export class CadastrarClientesComponent implements OnInit {
     })
   }
 
-  onSubmit(): void { 
+  onSubmit(): void {
     alert(`nome: ${this.form?.get('nome')?.value}\ncpf: ${this.form?.get('cpf')?.value}\nemail: ${this.form?.get('email')?.value}\nobs: ${this.form?.get('obs')?.value}\nativo: ${this.form?.get('ativo')?.value}`)
     //  Swal.fire({
     //   position: 'center',
@@ -36,8 +38,11 @@ export class CadastrarClientesComponent implements OnInit {
     //   timer: 1500
     // })
 
-    this.form.reset();
+  //   this.form.reset();
+  // }
+
+
   }
-    
+
 
 }

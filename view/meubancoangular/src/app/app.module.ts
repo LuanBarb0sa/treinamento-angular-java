@@ -18,6 +18,9 @@ import { ClientesComponent } from './pages/pages/clientes/clientes.component';
 import { CadastrarClientesComponent } from './pages/pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ContasComponent } from './pages/contas/contas.component';
 
 @NgModule({
   declarations: [
@@ -33,15 +36,19 @@ import { NgxCurrencyModule } from 'ngx-currency';
     CheckboxComponent,
     ButtonComponent,
     ClientesComponent,
-    CadastrarClientesComponent
+    CadastrarClientesComponent,
+    ContasComponent,
+
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
