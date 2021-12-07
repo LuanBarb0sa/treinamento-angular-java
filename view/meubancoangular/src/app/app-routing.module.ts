@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'deposito', component: DepositoComponent},
   { path: 'clientes', component: ClientesComponent},
   { path: 'cadastrar-clientes', component: CadastrarClientesComponent},
+  { path: 'cadastrar-clientes/:id', component: CadastrarClientesComponent},
   { path: 'contas', component: ContasComponent},
 ];
 
