@@ -38,11 +38,11 @@ export class CadastrarClientesComponent implements OnInit {
     //   timer: 1500
     // })
 
-  //   this.form.reset();
-  // }
-
-
+    this.form.reset();
   }
 
 
 }
+
+
+

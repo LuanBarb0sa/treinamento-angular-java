@@ -14,4 +14,5 @@ export class ContasService {
   listarTodasContas(){
     return this.http.get<IConta[]>(this.api);
   }
+
 }

@@ -3,6 +3,6 @@ export interface ICliente {
   nome: string;
   cpf: string;
   email: string;
-  obs: string;
+  observacoes: string;
   ativo: boolean;
 }

@@ -3,6 +3,6 @@ export class Clientes{
     nome!: string
     cpf!: string
     email!: string
-    obs!: string
-    ativo!: boolean 
+    observacoes!: string
+    ativo!: boolean
 }

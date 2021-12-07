@@ -16,6 +16,8 @@
       <th scope="col">E-mail</th>
       <th scope="col">Observações</th>
       <th scope="col">Ativo</th>
+      <th scope="col">Ações</th>
+
     </tr>
   </thead>
   <tbody>
@@ -24,10 +26,14 @@
       <td>{{ cliente.nome }}</td>
       <td>{{ cliente.cpf }}</td>
       <td>{{ cliente.email }}</td>
-      <td>{{ cliente.obs }}</td>
+      <td>{{ cliente.observacoes }}</td>
       <td>
         <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
         <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
+      </td>
+      <td>
+        <i class="far fa-edit" style="margin-right: 10px; cursor:pointer"></i>
+        <i class="fas fa-trash-alt text-danger" (click)="deletar(cliente.id)" style="cursor:pointer"></i>
       </td>
     </tr>
 

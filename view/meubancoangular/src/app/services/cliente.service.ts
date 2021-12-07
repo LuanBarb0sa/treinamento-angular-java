@@ -13,4 +13,8 @@ export class ClienteService {
   listarTodosClientes(){
     return this.http.get<ICliente[]>(this.api);
   }
+
+  deleteClient(id: number) {
+    return this.http.delete(`${this.api}/${id}`)
+  }
 }
