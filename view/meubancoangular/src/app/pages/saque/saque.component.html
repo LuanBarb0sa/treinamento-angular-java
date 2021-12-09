@@ -1,18 +1,22 @@
 <h1 class="mb-5 mt-5"> Saque </h1>
 <hr>
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="sacar()">
     <div class="mb-3">
       <label  class="form-label">Agencia</label>
       <input type="text" class="form-control"  name="Agencia" formControlName="agencia" maxlength="4">
     </div>
     <div class="mb-3">
       <label  class="form-label">Conta</label>
-      <input type="text" class="form-control"  name="Conta" formControlName="conta" mask="00000000-0">
+      <input type="text" class="form-control"  name="Conta" formControlName="numeroConta" >
     </div>
     <div class="mb-3">
       <label  class="form-label">Valor</label>
       <input type="text" class="form-control"  name="Valor" formControlName="valor" currencyMask >
     </div>
+    <app-checkbox label="Aceito os termos"></app-checkbox>
+    <button titulo="Enviar" class="btn btn-dark"  [disabled]="form.invalid" >Enviar</button>
 </form>
-  <app-checkbox label="Aceito os termos"></app-checkbox>
-  <button titulo="Enviar" class="btn btn-dark"  [disabled]="form.invalid" (click)="onSubmit()">Enviar</button>
+
+<!-- button  -->
+  <!-- OBS: O button precisa ficar dentro do Form, caso contrário, você vai precisar executar a função 'click' para chamar o 'sacar()' -->
+  <!-- <button titulo="Enviar" class="btn btn-dark"  [disabled]="form.invalid" (click)= "sacar()" >Enviar</button> -->
