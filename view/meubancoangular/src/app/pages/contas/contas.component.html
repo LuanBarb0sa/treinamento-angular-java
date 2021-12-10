@@ -12,8 +12,8 @@
   <thead>
     <tr>
       <th scope="col">Nome do Cliente</th>
-      <th scope="col">Número da Conta</th>
       <th scope="col">Agência</th>
+      <th scope="col">Número da Conta</th>
       <th scope="col">Saldo</th>
     </tr>
   </thead>
@@ -23,9 +23,10 @@
       <td>{{ conta.cliente.nome }}</td>
       <td>{{ conta.agencia }}</td>
       <td>{{ conta.numero }}</td>
-      <td>{{ conta.saldo | currency : 'BRL' }} ,00</td>
+      <td>{{ conta.saldo | currency : 'BRL' }}</td>
     </tr>
   </tbody>
 </table>
-<button type="submit" class="btn btn-success" >Cadastrar Conta</button>
+<button type="submit" class="btn btn-primary" routerLink="/cadastrar-contas" routerLinkActive="active" >Cadastrar Conta</button>
+
 

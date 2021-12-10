@@ -7,6 +7,8 @@ import { ExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarContasComponent } from './pages/contas/cadastrar-contas/cadastrar-contas.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'cadastrar-clientes', component: CadastrarClientesComponent},
   { path: 'cadastrar-clientes/:id', component: CadastrarClientesComponent},
   { path: 'contas', component: ContasComponent},
+  { path: 'cadastrar-contas', component: CadastrarContasComponent},
+  { path: 'transferencia', component: TransferenciaComponent},
 ];
 
 @NgModule({

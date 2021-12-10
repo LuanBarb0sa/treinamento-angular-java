@@ -21,6 +21,8 @@ import { NgxCurrencyModule } from 'ngx-currency';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ContasComponent } from './pages/contas/contas.component';
+import { CadastrarContasComponent } from './pages/contas/cadastrar-contas/cadastrar-contas.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ContasComponent } from './pages/contas/contas.component';
     ClientesComponent,
     CadastrarClientesComponent,
     ContasComponent,
+    CadastrarContasComponent,
+    TransferenciaComponent,
 
   ],
   imports: [

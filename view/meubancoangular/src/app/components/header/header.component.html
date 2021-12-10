@@ -21,14 +21,27 @@
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/extrato" routerLinkActive="active">Extrato</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-white" routerLink="/saque" routerLinkActive="active">Saque</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link text-white" routerLink="/deposito" routerLinkActive="active">Depósito</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link text-white" routerLink="/contas" routerLinkActive="active">Contas</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/transferencia" routerLinkActive="active">Transferência</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Operações
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/deposito" routerLinkActive="active"> Depósito </a></li>
+            <li><a class="dropdown-item" routerLink="/saque" routerLinkActive="active"> Saque </a></li>
+            <li><a class="dropdown-item " routerLink="/transferencia" routerLinkActive="active"> Transferência </a></li>
+          </ul>
         </li>
       </ul>
     </div>

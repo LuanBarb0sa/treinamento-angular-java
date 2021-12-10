@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ISaqueDeposito } from 'src/app/interfaces/saque-deposito';
+import { ContasService } from 'src/app/services/contas.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,8 +13,8 @@ import Swal from 'sweetalert2';
 export class DepositoComponent implements OnInit {
   form!:FormGroup;
 
-  constructor(private formb:FormBuilder) { }
-
+  constructor(private formb:FormBuilder, private router: Router, private contaService: ContasService) { }
+  
   ngOnInit(): void {
     this.createForm();
   }
@@ -19,24 +22,35 @@ export class DepositoComponent implements OnInit {
   createForm() :void {
     this.form = this.formb.group({
       agencia: new FormControl(null,[Validators.required, Validators.maxLength(4)]),
-      conta: new FormControl (null,[Validators.required]),
+      numeroConta: new FormControl (null,[Validators.required]),
       valor: new FormControl(null,[Validators.required])
     })
   }
 
   onSubmit(): void { 
-    // alert(`agencia: ${this.form?.get('agencia')?.value}\nconta: ${this.form?.get('conta')?.value}\nvalor: ${this.form?.get('valor')?.value}`)
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Depósito confirmado',
-      showConfirmButton: false,
-      timer: 1500
-    })
+    console.log(this.form.value)
 
     this.form.reset();
+  }
+  
+  deposito(){
+    const deposito: ISaqueDeposito = this.form.value;
+    this.contaService.deposito(deposito).subscribe(result =>{
+      Swal.fire('Ótimo!',
+      'Deposito realizado com sucesso',
+      'success');
+      this.router.navigate(['/contas']);
+    }, error => {
+      Swal.fire('Ish!',
+      'Houve algum erro ao tentar sacar, tente novamente',
+      'error');
+    });
+  }
+}
+    
 
- }
    
 
-}
+ 
+   
+
