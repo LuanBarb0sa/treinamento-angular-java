@@ -22,7 +22,9 @@
     <label class="form-check-label " for="exampleCheck1" titulo= "Enviar">Aceito os termos</label>
     </div>
 </form>
-<button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="form.invalid">Enviar</button>
+<button type="submit" class="btn btn-dark" (click)="onSubmit()" [disabled]="form.invalid">Enviar</button> <br>
+<button type="submit" class="btn btn-primary mt-3" (click)="show=!show" *ngIf="id">Cadastrar Contas</button>
+<app-cadastrar-contas [dataSource]="$sources" *ngIf="!show"></app-cadastrar-contas>
 
 
 

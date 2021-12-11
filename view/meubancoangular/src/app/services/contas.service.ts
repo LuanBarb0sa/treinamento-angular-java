@@ -29,4 +29,7 @@ export class ContasService {
     return this.http.post<IConta>(`${this.api}transferencia`, transferencia)
   }
 
+  cadastrar(dados: IConta): Observable<any> {
+    return this.http.post<IConta>(`${this.api}`, dados); //enviando valores para o back
+  }
 }

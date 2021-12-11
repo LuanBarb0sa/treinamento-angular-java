@@ -26,4 +26,9 @@ export class ClienteService {
   getById(id: number): Observable<any>{
     return this.http.get(`${this.api}/${id}`);
   }
+
+  putClient(id: number, body: ICliente): Observable<any>{
+    return this.http.put(`${this.api}${id}`, body); 
+  }
+
 }

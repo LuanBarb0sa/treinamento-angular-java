@@ -14,6 +14,8 @@ import { ICliente } from 'src/app/interfaces/cliente';
 export class CadastrarClientesComponent implements OnInit {
   form!:FormGroup;
   id!: number;
+  show:boolean = true;
+  $sources!:ICliente;
 
   constructor(private formb:FormBuilder, private clienteService: ClienteService, private router: ActivatedRoute) {
   }
@@ -33,6 +35,7 @@ export class CadastrarClientesComponent implements OnInit {
       email: new FormControl(data ? data.email : null ,[Validators.required, Validators.email]),
       observacoes: new FormControl(data ? data.observacoes : null ,[Validators.required, Validators.maxLength(30)]),
       ativo: new FormControl(data ? data.ativo : null ,[Validators.required]),
+      id: new FormControl(data ? data.id : null ),
     })
   }
 
@@ -40,14 +43,38 @@ export class CadastrarClientesComponent implements OnInit {
    *Cadastrar clientes
    */
   onSubmit(): void {
+    this.id ? this.update() : this.adicionar();
+  }
+
+  adicionar(): void {
     this.clienteService.postClient(this.form.value)
     .subscribe(
       (res) => {
-        alert('Deu certo');
+        Swal.fire('Ótimo!',
+      'Cliente Cadastrado com sucesso',
+      'success');
         this.form.reset();
       },
       (erro) => {
-        alert('Erro');
+        Swal.fire('Opa!',
+      'Revise os seus dados',
+      'error');
+    });
+  }
+
+  update(): void {
+    this.clienteService.putClient(this.id, this.form.value)
+    .subscribe(
+      (res) => {
+        Swal.fire('Ótimo!',
+      'Cliente Cadastrado com sucesso',
+      'success');
+        this.form.reset();
+      },
+      (erro) => {
+        Swal.fire('Opa!',
+      'Revise os seus dados',
+      'error');
     });
   }
 
@@ -55,6 +82,7 @@ export class CadastrarClientesComponent implements OnInit {
     this.clienteService.getById(this.id).subscribe(
       (res) => {
         this.createForm(res);
+        this.$sources=res;
       },
       (erro) => {
         alert('Erro');

@@ -9,7 +9,7 @@ import { ContasService } from 'src/app/services/contas.service';
 })
 export class ContasComponent implements OnInit {
 
-  contas: IConta[] = [];
+  contas: any[] = [];
 
   constructor(private contasService: ContasService) { }
 
@@ -20,6 +20,7 @@ export class ContasComponent implements OnInit {
   listarTodasContas(){
     this.contasService.listarTodasContas().subscribe( contasApi => {
       this.contas = contasApi;
+      console.log(this.contas)
       })
 
 
