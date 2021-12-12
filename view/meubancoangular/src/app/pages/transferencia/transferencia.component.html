@@ -5,27 +5,42 @@
       <div class="col-12 col-md-6">
         <label class="form-label">Agência Origem</label>
         <input type="text" class="form-control" name="Agência Origem" formControlName="agenciaOrigem">
+        <small class="text-danger mb-2" *ngIf="form.get('agenciaOrigem')?.errors &&
+      form.get('agenciaOrigem')?.hasError('required')">Campo obrigatório</small>
       </div>
       <div class="col-12 col-md-6">
         <label class="form-label">Conta Origem</label>
         <input type="text" class="form-control" name="Conta Origem" formControlName="numeroContaOrigem">
+        <small class="text-danger mb-2" *ngIf="form.get('numeroContaOrigem')?.errors &&
+      form.get('numeroContaOrigem')?.hasError('required')">Campo obrigatório</small>
       </div>
     </div>
-    <div class="mb-3">
+  <div class="row">
+    <div class="col-12 col-md-6">
       <label  class="form-label">Agência Destino</label>
       <input type="text" class="form-control"  name="Valor" formControlName="agenciaDestino" >
+      <small class="text-danger mb-2" *ngIf="form.get('agenciaDestino')?.errors &&
+      form.get('agenciaDestino')?.hasError('required')">Campo obrigatório</small>
     </div>
-    <div class="mb-3">
+    <div class="col-12 col-md-6">
         <label  class="form-label">Conta Destino</label>
         <input type="text" class="form-control"  name="Valor" formControlName="numeroContaDestino" >
+        <small class="text-danger mb-2" *ngIf="form.get('numeroContaDestino')?.errors &&
+      form.get('numeroContaDestino')?.hasError('required')">Campo obrigatório</small>
     </div>
-    <div class="mb-3">
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
         <label  class="form-label">Valor</label>
         <input type="text" class="form-control"  name="Valor" formControlName="valor" currencyMask>
+        <small class="text-danger mb-2" *ngIf="form.get('valor')?.errors &&
+      form.get('valor')?.hasError('required')">Campo obrigatório</small>
     </div>
+  </div>
 </form>
+<br>
 <app-checkbox label="Aceito os termos"></app-checkbox>
-<button titulo="Enviar" class="btn btn-primary"  [disabled]="form.invalid"  (click)="transferir()">Transferir</button>
+<button titulo="Enviar" class="btn btn-dark"  [disabled]="form.invalid"  (click)="transferir()">Transferir</button>
 
 
 <div class="row">

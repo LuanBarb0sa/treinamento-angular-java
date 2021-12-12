@@ -21,7 +21,7 @@ export class SaqueComponent implements OnInit {
 
   createForm() :void {
     this.form = this.formb.group({
-      agencia: new FormControl(null,[Validators.required, Validators.maxLength(4)]),
+      agencia: new FormControl(null,[Validators.required, Validators.maxLength(6)]),
       numeroConta: new FormControl (null,[Validators.required]),
       valor: new FormControl(null,[Validators.required])
     })

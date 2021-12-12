@@ -1,20 +1,29 @@
 <h1 class="mb-5 mt-5"> Saque </h1>
 <hr>
 <form [formGroup]="form" (ngSubmit)="sacar()">
-    <div class="mb-3">
-      <label  class="form-label">Agencia</label>
-      <input type="text" class="form-control"  name="Agencia" formControlName="agencia" maxlength="4">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <label class="form-label">Agencia</label>
+      <input type="text" class="form-control" name="Agencia" formControlName="agencia" maxlength="6">
+      <small class="text-danger mb-2" *ngIf="form.get('agencia')?.errors &&
+      form.get('agencia')?.hasError('required')">Campo obrigatório</small>
     </div>
-    <div class="mb-3">
-      <label  class="form-label">Conta</label>
-      <input type="text" class="form-control"  name="Conta" formControlName="numeroConta" >
+    <div class="col-12 col-md-4">
+      <label class="form-label">Conta</label>
+      <input type="text" class="form-control" name="Conta" formControlName="numeroConta">
+      <small class="text-danger mb-2" *ngIf="form.get('numeroConta')?.errors &&
+      form.get('numeroConta')?.hasError('required')">Campo obrigatório</small>
     </div>
-    <div class="mb-3">
-      <label  class="form-label">Valor</label>
-      <input type="text" class="form-control"  name="Valor" formControlName="valor" currencyMask >
+    <div class="col-12 col-md-4">
+      <label class="form-label">Valor</label>
+      <input type="text" class="form-control" name="Valor" formControlName="valor" currencyMask>
+      <small class="text-danger mb-2" *ngIf="form.get('valor')?.errors &&
+      form.get('valor')?.hasError('required')">Campo obrigatório</small>
     </div>
+  </div>
+  <br>
     <app-checkbox label="Aceito os termos"></app-checkbox>
-    <button titulo="Enviar" class="btn btn-primary"  [disabled]="form.invalid" >Sacar</button>
+    <button titulo="Enviar" class="btn btn-dark"  [disabled]="form.invalid" >Sacar</button>
 </form>
 
 <!-- button  -->
