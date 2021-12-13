@@ -22,21 +22,21 @@
 
 <h1> Principais Funcionalidades do Front-end </h1>
 
-[✔] Criar NavBar;
-[✔] Criar SideBar;
-[✔] Criar view de cadastro de um novo Cliente;
-[✔] Fazer os Routes entre as telas;
-[✔] Criar o Footer;
-[✔] Criar a view de extrato (ainda não se comunica com o back);
-[✔] Criar a view de depósito;
-[✔] Criar a view de saque;
-[✔] Criar a view de transferência;
-[✔] Criar a view de listagem de contas;
-[✔] Criar a view de edição de contas;
-[✔] Criar a view de listagem de clientes;
-[✔] Criar método de transferência de contas;
-[✔] Criar método de saque de contas;
-[✔] Criar método de depósito de contas;
-[✔] Consumir Api Clientes;
-[✔] Consumir Api Contas;
-[✔] Criar a view HOME.
+[✔] Criar NavBar; <br>
+[✔] Criar SideBar;<br>
+[✔] Criar view de cadastro de um novo Cliente;<br>
+[✔] Fazer os Routes entre as telas;<br>
+[✔] Criar o Footer;<br>
+[✔] Criar a view de extrato (ainda não se comunica com o back);<br>
+[✔] Criar a view de depósito;<br>
+[✔] Criar a view de saque;<br>
+[✔] Criar a view de transferência;<br>
+[✔] Criar a view de listagem de contas;<br>
+[✔] Criar a view de edição de contas;<br>
+[✔] Criar a view de listagem de clientes;<br>
+[✔] Criar método de transferência de contas;<br>
+[✔] Criar método de saque de contas;<br>
+[✔] Criar método de depósito de contas;<br>
+[✔] Consumir Api Clientes;<br>
+[✔] Consumir Api Contas;<br>
+[✔] Criar a view HOME.<br>
