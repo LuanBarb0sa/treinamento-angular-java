@@ -17,7 +17,7 @@ export class CadastrarClientesComponent implements OnInit {
   show:boolean = true;
   $sources!:ICliente;
 
-  constructor(private formb:FormBuilder, private clienteService: ClienteService, private router: ActivatedRoute) {
+  constructor(private formb:FormBuilder, private clienteService: ClienteService, private router: ActivatedRoute, private rout: Router) {
   }
 
   ngOnInit():void {
@@ -53,7 +53,7 @@ export class CadastrarClientesComponent implements OnInit {
         Swal.fire('Ótimo!',
       'Cliente Cadastrado com sucesso',
       'success');
-        this.form.reset();
+      this.rout.navigate(['/clientes']);
       },
       (erro) => {
         Swal.fire('Opa!',
